@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+    stages {
+           stage ("cleaning stage") {
+                  steps {
+                        bat "maven clean"
+                  }
+           }
+           stage ("testing stage")  {
+                  steps {
+                        bat "mvn test"
+                  }
+           }
+           stage ("packaging stage") {
+                  steps  {
+                        bat "mvn package"
+                  }
+           }
+     }
+}     
+                        
+                        
+    

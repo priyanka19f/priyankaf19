@@ -1,8 +1,9 @@
 pipeline {
-    agent 
+    agent {
       node {
           label 'Dev1'
        }
+    }   
     stages {
            stage ("cleaning stage") {
                   steps {

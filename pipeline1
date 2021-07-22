@@ -8,7 +8,7 @@ pipeline {
               stage ("git clone") {
                      steps {
                         script {
-                    git branch: 'master',credentialsId: 'gituser',url: 'https://github.com/priyanka19f/DevOpsClassDemo-master.git'
+                    git branch: 'master',credentialsId: 'gituser',url: 'https://github.com/priyanka19f/DevOpsClassCodes-master.git'
                      }
               }       
       }

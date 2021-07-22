@@ -1,4 +1,4 @@
-pipeline
+pipeline {
     agent {
       node {
          label 'dev1'
@@ -6,15 +6,12 @@ pipeline
       }
       stages {
            stage ("git clone") {
-           {
             steps {
                 script {
                     git branch: 'master',credentialsId: 'gituser',url: 'https://github.com/priyanka19f/DevOpsClassDemo-master.git'
                 }
             }
-           }
             stage ("Build code") {
-             {
               steps {
                   sh " mvn clean install"
                  }

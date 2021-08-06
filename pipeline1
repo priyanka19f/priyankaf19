@@ -24,7 +24,7 @@ pipeline {
                                  [
                                        artifactId: 'addressbook',
                                        classifier: '', 
-                                       file: 'target/addressbook', 
+                                       file: 'target/addressbook-2.0', 
                                        type: 'war'
                                  ]
                                  

@@ -24,7 +24,7 @@ pipeline {
                                  [
                                        artifactId: 'addressbook',
                                        classifier: '', 
-                                       file: 'target/Vaadin Addressbook example-2.0', 
+                                       file: 'target/addressbook', 
                                        type: 'war'
                                  ]
                                  

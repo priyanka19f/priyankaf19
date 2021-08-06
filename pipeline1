@@ -11,13 +11,33 @@ pipeline {
                     git branch: 'master',credentialsId: 'gituser',url: 'https://github.com/priyanka19f/DevOpsClassCodes-master.git'
                      }
               }       
-      }
-              stage ("Build code") {
+      
+              stage ("Build") {
                      steps {
-                            sh " mvn clean install"
+                            sh " mvn clean package"
                      }
               }
-      }
+              stage ("upload war to nexus"){
+                    steps  {
+                            nexusArtifactUploader artifacts: [
+                                 [
+                                       artifactId: 'addressbook',
+                                       classifier: '', 
+                                       file: 'target/Vaadin Addressbook example-2.0', 
+                                       type: 'war'
+                                 ]
+                                 
+                          ],
+                          credentialsId: 'nexus3', 
+                          groupId: 'com.edurekademo.tutorial', 
+                          nexusUrl: '34.131.232.49', 
+                          nexusVersion: 'nexus3', 
+                          protocol: 'http', 
+                          repository: 'pinky', 
+                          version: '2.0'
+                      }
+                }
+         }     
 }      
         
    

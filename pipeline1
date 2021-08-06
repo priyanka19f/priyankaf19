@@ -36,8 +36,12 @@ pipeline {
                           repository: 'pinky', 
                           version: '2.0'
                       }
-                }
-         }     
-}      
-        
+               }
+         } 
+         
+    }
+    
+}    
+    
+    
    
